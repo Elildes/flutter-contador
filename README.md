@@ -1,6 +1,10 @@
-# flutter_app_contador
+# Descrição do aplicativo
 
-A new Flutter project.
+Novo projeto com o framework Flutter usando programação Dart.
+
+# Desenvolvimento
+
+Este aplicativo foi desenvolvido no Visual Studio Code.
 
 ## Getting Started
 
