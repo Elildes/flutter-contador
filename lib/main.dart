@@ -28,61 +28,68 @@ class _HomeState extends State<Home> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Image.asset(
-          "images/restaurante01.jpg",
-          fit: BoxFit.cover,
-          height: 1000.0,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Pessoas: $_pessoa",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ), //text
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: ElevatedButton(
-                    child: Text(
-                      "+1",
-                      style: TextStyle(fontSize: 40.0, color: Colors.white),
+    return Scaffold(
+      appBar: AppBar(
+        // título da tela inicial
+        title: Text("Contador de Pessoas"),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Image.asset(
+            "images/restaurante01.jpg",
+            fit: BoxFit.cover,
+            height: 1000.0,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Pessoas: $_pessoa",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ), //text
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: ElevatedButton(
+                      child: Text(
+                        "+1",
+                        style: TextStyle(fontSize: 40.0, color: Colors.white),
+                      ),
+                      onPressed: () {
+                        _changePeople(1);
+                      },
                     ),
-                    onPressed: () {
-                      _changePeople(1);
-                    },
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: ElevatedButton(
-                    child: Text(
-                      "-1",
-                      style: TextStyle(fontSize: 40.0, color: Colors.white),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: ElevatedButton(
+                      child: Text(
+                        "-1",
+                        style: TextStyle(fontSize: 40.0, color: Colors.white),
+                      ),
+                      onPressed: () {
+                        _changePeople(-1);
+                      },
                     ),
-                    onPressed: () {
-                      _changePeople(-1);
-                    },
                   ),
-                ),
-              ],
-            ),
-            Text(
-              _mensagem,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 30),
-            ) //text
-          ], //widget
-        ) //Column
-      ],
+                ],
+              ),
+              Text(
+                _mensagem,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 30),
+              ), //text
+            ], //widget
+          ), //Column
+        ],
+      ),
     );
   }
 }
